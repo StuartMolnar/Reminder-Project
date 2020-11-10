@@ -51,6 +51,17 @@ let remindersController = {
   // Delete the Reminder
   delete: (req, res) => {
     // ⭐️ your implementation here ⭐️
+    let reminderToFind = req.params.id; // returns the id of remindern ie http://localhost:3000/reminder/1 **id=1**
+    //remove reminder with id of reminderTOFind
+
+    database.cindy.reminders.forEach(element => { // loop through the list of reminders
+      const index = database.cindy.reminders.indexOf(element); // returns the index of the reminder from the list
+
+      if (element.id == Number(reminderToFind)){
+      database.cindy.reminders.splice(index, 1)
+    }
+  })
+    res.redirect('/reminders');
   }
 }
 

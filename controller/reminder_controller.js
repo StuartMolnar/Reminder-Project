@@ -56,6 +56,7 @@ let remindersController = {
   },
 
   // Edit the Reminder
+  //test
   update: (req, res) => {
     // ⭐️ your implementation here ⭐️
     let reminderToFind = req.params.id;

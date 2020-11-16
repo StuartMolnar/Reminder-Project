@@ -78,10 +78,10 @@ let remindersController = {
     database.cindy.reminders.forEach(element => { // loop through the list of reminders
       const index = database.cindy.reminders.indexOf(element); // returns the index of the reminder from the list
 
-      if (element.id == Number(reminderToFind)) {
+      if (element.id == Number(reminderToFind)){
         database.cindy.reminders.splice(index, 1)
-      }
-    })
+    }
+  })
     res.redirect('/reminders');
   }
 }

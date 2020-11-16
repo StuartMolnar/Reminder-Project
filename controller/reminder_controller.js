@@ -37,11 +37,14 @@ let remindersController = {
       id: database.cindy.reminders.length + 1,
       title: req.body.title,
       description: req.body.description,
-      completed: false
+      completed: false,
+      subtasks: req.body.subtasks.split(',').slice(0, -1)
     }
+    console.log(req.body.subtasks.split(',').slice(0, -1));
     database.cindy.reminders.push(reminder);
     res.redirect('/reminders');
   },
+
 
   // Show the Edit Reminder Page
   edit: (req, res) => {

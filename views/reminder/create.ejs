@@ -1,16 +1,15 @@
 <script>
   let subtasks = '';
+  let subtasksHTML = ``;
   let storeSubtask = () => {
     //console.log(document.getElementById("subtask").value);
     var subtask = document.getElementById("subtask").value;
     subtasks += subtask + ',';
+    subtasksHTML += `<button type="button" class="list-group-item list-group-item-action">` + subtask + `</button>`;
+    document.getElementById("subtask-list").innerHTML = subtasksHTML;
     $("#subtasks").val(subtasks);
-    console.log(document.getElementById("subtasks").value);
   };
 
-  let logx = () => {
-    console.log('x');
-  }
 </script>
 
 <div class="container">
@@ -24,6 +23,12 @@
       <textarea class="form-control" id="descriptionInput" rows="3" placeholder="Description" name="description"></textarea>
     </div>
 
+    <h4><strong>Subtasks:</strong></h4>
+
+      <div id="subtask-list" class="list-group">
+        
+        
+      </div>
     
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#subtaskModal">Add Subtask</button>
     
@@ -54,7 +59,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal" >Close</button>
-      <button type="button" class="btn btn-primary" onclick="storeSubtask()">Submit</button>
+      <button type="button" class="btn btn-primary" onclick="storeSubtask()" data-dismiss="modal">Submit</button>
       </div>
     </div>
   </div>

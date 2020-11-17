@@ -89,4 +89,8 @@ let remindersController = {
   }
 }
 
+deleteSubtask: (req, res) => {
+  
+}
+
 module.exports = remindersController;

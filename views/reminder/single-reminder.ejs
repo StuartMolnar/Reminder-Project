@@ -17,13 +17,25 @@
       
       <h4><strong>Subtasks:</strong></h4>
 
+      <!--
+      <form id="list-group">
+        <% for(var i=0; i!=reminderItem.subtasks.length; i++) { %>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id=`exampleRadios<%= i %>` value=`option<%= i %>`>
+            <label class="form-check-label" for=`exampleRadios<%= i %>`></label>
+            <%= reminderItem.subtasks[i] %>
+          </label>
+          </div>
+        <% }; %>
+      </form>
+      -->
       <div class="list-group">
         
         <% reminderItem.subtasks.forEach((e) => { %>
           <button type="button" class="list-group-item list-group-item-action"><%= e %></button>
           <% }); %>
       </div>
-      
+
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#subtaskModal">Add Subtask</button>
       <form class="deleteForm" method="POST" action=<% "/reminder/deleteSubtask/" + reminderItem.id %>>
         <button type="submit" class="btn btn-danger">Delete Subtask</button>
@@ -33,7 +45,7 @@
       <br>
       <a class="btn btn-warning" href=<%= "/reminder/" + reminderItem.id + "/edit" %>>Edit</a>
 
-      <form class="deleteForm " method="POST" action=<%= "/reminder/delete/" + reminderItem.id %>>
+      <form class="deleteForm " method="POST" action=<%= "/reminder/deleteSubtask/" + reminderItem.id %>>
         <button type="submit" class="btn btn-danger">Delete Reminder</button>
       </form>
 

@@ -5,8 +5,20 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" href="/reminders">Reminder List</a>
-      <a class="nav-item nav-link" href="/reminder/new">Create</a>
+      <a id="reminderlist" class="nav-item nav-link" href="/reminders">Reminder List</a>
+      <a id="create" class="nav-item nav-link" href="/reminder/new">Create</a>
     </div>
   </div>
 </nav>
+
+<script>
+  let url = window.location.href;
+  url = url.substring(url.indexOf("3001")+4);
+  console.log(url);
+  if(url == "/reminders"){
+    $("#reminderlist").addClass("active");
+  }else if(url == "/reminder/new"){
+    $("#create").addClass("active");
+  }
+  
+</script>

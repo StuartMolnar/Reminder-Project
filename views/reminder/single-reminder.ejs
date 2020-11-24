@@ -12,6 +12,12 @@
             <span class="label label-danger">False</span>
           <% } %>
         </h4>
+        <h5>
+          Start date : <%= reminderItem.start_date %>
+        </h5>
+        <h5>
+          End date : <%= reminderItem.end_date %>
+        </h5>
 
         <a class="btn btn-warning" href=<%= "/reminder/" + reminderItem.id + "/edit" %>>Edit</a>
 

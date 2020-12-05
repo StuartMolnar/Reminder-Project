@@ -34,9 +34,10 @@ let authController = {
 
   loginSubmit: (req, res) => {
     if (database[req.body.email] && database[req.body.email].password === req.body.password) {
-      //autism hack
+      /*
       req.session = {};
       req.session['user']= req.body.email;
+      */
       res.redirect('/reminders');
     } else {
       res.redirect('/');

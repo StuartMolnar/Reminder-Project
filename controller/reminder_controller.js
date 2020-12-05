@@ -72,7 +72,15 @@ let remindersController = {
     })
     database["cindy@cindy.com"].reminders.splice(reminderIndex, 1);
     res.redirect('/reminders');
+  },
+
+  deleteSubtask: (req, res) => {
+    res.send("not implemented");
   }
+
 }
+
+
+
 
 module.exports = remindersController;

@@ -16,12 +16,17 @@
   url = url.substring(url.indexOf("3001")+4);
   console.log(url);
   //highlight the active page selection on the navbar
-  if(url.includes("/reminder")){
-    $("#reminderlist").addClass("active");
+  if (url.includes("/reminder/new")){
+    $("#create").addClass("active visible");
+    $("#creminderlist").addClass("visible");
+  } else if(url.includes("/reminder")){
+    $("#reminderlist").addClass("active visible");
+    $("#create").addClass("visible");
   //if the active page is not contained on the navbar options, then hide the navbar options
   }else{
     $("#reminderlist").addClass("invisible");
     $("#create").addClass("invisible");
   }
+  
   
 </script>
